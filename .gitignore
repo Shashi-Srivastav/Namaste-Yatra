@@ -1,0 +1,19 @@
+package.json
+<<<<<<< HEAD
+node_modules
+package-lock.json
+=======
+<<<<<<< HEAD
+node_modules
+=======
+node_modules
+package-lock.json
+>>>>>>> a0cad4a (edit,show,update,new - routes, styling, script,middleware,err handling client side and server side)
+
+
+
+# Backup Package.json
+>>>>>>> c305763 (index, show,create, edit ,update route)
+.vercel
+.env
+
