@@ -4,13 +4,13 @@
   const listing = <%- JSON.stringify(listing) %>;
 </script>
   <body>
-    <div class="row mt-3">
-      <div class="col-8 offset-3">
+    <div class="row mt-3 show-main">
+      <div class="col-8 offset-2">
         <h3>
           <%= listing.title %>
         </h3>
       </div>
-      <div class="card col-6 offset-3 show-card listing-card"> 
+      <div class="card col-8 offset-2 show-card listing-card"> 
         <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="listing_img"> 
         <div class="card-body"> 
         <p class="card-text"> Owned by ~  <i><%= listing.owner.username  %></i></p> 
@@ -30,7 +30,7 @@
       </div>
 <% } %>
 
-      <div class="col-8 offset-3 mb-3">
+      <div class="col-8 offset-2 mb-3">
         
 <% if(currUser) { %>
   <hr />
@@ -68,7 +68,7 @@
         <div class="row">
           <p><b>All Reviews</b></p>
           <% for(review of listing.reviews){%>
-            <div class="card  offset-3 col-5 ms-3 mb-3  ">
+            <div class="card  col-8 offset-2 ms-3 mb-3">
               <div class="card-body">
                 <h5 class="card-title">@<%= review.author.username %></h5>
                 <p class="starability-result mb-2 card-text" data-rating="<%= review.rating %>"></p>
@@ -89,7 +89,7 @@
         </div>
         <% } %>
       </div>
-      <div class="col-6 offset-3 mb-3">
+      <div class="col-8 offset-2 mb-3">
         <h3>Where you'll be</h3>
         <div id="map"></div>
       </div>
