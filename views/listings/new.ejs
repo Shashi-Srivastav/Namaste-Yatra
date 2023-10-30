@@ -28,22 +28,40 @@
         <input name="listing[price]" placeholder="40,000" class="form-control"required/>
         <div class="invalid-feedback">Price should be valid</div>
       </div>
+      <!-- <div class="mb-3 col-md-8">
+        <label for="category" class="form-label">Category</label>
+        <select name="listing[category]" class="form-select" required>
+          <option value="trending">Trending</option>
+          <option value="rooms">Rooms</option>
+          <option value="iconic City">Iconic City</option>
+          <option value="mountains">Mountains</option>
+          <option value="castle">Castle</option>
+          <option value="iconic City">Beach</option>
+          <option value="mountains">Camping</option>
+          <option value="castle">Ski-in/Out</option>
+          <option value="iconic City">Pools</option>
+          <option value="mountains">Arctic</option>
+          <option value="castle">Design</option>
+        </select>
+        <div class="invalid-feedback">Please select a category</div>
+      </div> -->
+    </div>
+
+    <div class="row">
+    <div class="mb-3 col-md-4">
+      <label for="location" class="form-label">Location</label>
+      <input name="listing[location]" placeholder="Jaipur, Rajasthan" type="text" class="form-control"required/>
+      <div class="invalid-feedback">Location should be valid</div>
+    </div>
+
       <div class="mb-3 col-md-8">
         <label for="country" class="form-label">Country</label>
         <input name="listing[country]" placeholder="India" type="text" class="form-control" required/>
         <div class="invalid-feedback">Countary name should be valid</div>
       </div>
     </div>
-
-
-    <div class="mb-3">
-      <label for="location" class="form-label">Location</label>
-      <input name="listing[location]" placeholder="Jaipur, Rajasthan" type="text" class="form-control"required/>
-      <div class="invalid-feedback">Location should be valid</div>
-    </div>
-
-
-    <button class="btn btn-dark add-btn mt-3">Add</button>
+    
+      <button class="btn btn-dark add-btn mt-3">Add</button>
   </form>
 </div>
 </div>
