@@ -12,7 +12,8 @@ const sampleListings = [
     country: "United States",
     geometry:{
       type: 'Point', coordinates: [ -118.689423, 34.035591 ] 
-    }
+    },
+    // category: "beachfront",
   },
   {
     title: "Modern Loft in Downtown",
@@ -27,7 +28,8 @@ const sampleListings = [
     country: "United States",
     geometry:{
       type: 'Point', coordinates: [ -74.0059945, 40.7127492 ]
-    }
+    },
+    // category: "trending",
   },
   {
     title: "Mountain Retreat",
