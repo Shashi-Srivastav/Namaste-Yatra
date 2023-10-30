@@ -60,3 +60,38 @@ module.exports.isReviewAuthor = async (req, res, next) => {
     }
     next();
 };
+
+
+
+
+
+
+// <input type="file" id="imageInput" accept="image/*">
+// <button id="uploadButton">Upload</button>
+// <div id="errorContainer"></div>
+
+{/* <script>
+  document.getElementById('uploadButton').addEventListener('click', function () {
+    const fileInput = document.getElementById('imageInput');
+    const errorContainer = document.getElementById('errorContainer');
+    const maxSize = 5 * 1024 * 1024; // 5MB in bytes
+
+    if (fileInput.files.length === 0) {
+      errorContainer.innerText = 'Please select an image to upload.';
+      return;
+    }
+
+    const file = fileInput.files[0];
+
+    if (file.size > maxSize) {
+      errorContainer.innerText = 'File size exceeds the limit (5MB).';
+      return;
+    }
+
+    Continue with the upload to Cloudinary
+    You can use JavaScript to initiate the upload to Cloudinary here.
+
+    Reset the error message
+    errorContainer.innerText = '';
+  });
+</script> */}
