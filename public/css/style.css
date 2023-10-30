@@ -14,7 +14,7 @@ body::-webkit-scrollbar{
 }
 
 .navbar {
-    height: 5rem;
+    height: 4.5rem;
     background-color: white;
 }
 
@@ -69,7 +69,7 @@ body::-webkit-scrollbar{
 
 .card-img-top {
     border-radius: 1.2rem !important;
-    width: 100% ;
+
     object-fit: cover !important;
 }
 
@@ -83,6 +83,7 @@ body::-webkit-scrollbar{
 
 .listing-link {
     text-decoration: none;
+    cursor: default;
 }
 
 /* Card Effect */
@@ -106,9 +107,14 @@ body::-webkit-scrollbar{
 }
 
 /* Show Page  */
-
+/* img when there is more  */
+/* .show-img {
+    height: 35vh;
+    width: 100%;
+} */
 .show-img {
-    height: 30vh;
+  height: 30vh;
+  width: 100%;
 }
 
 .btns {
@@ -304,6 +310,7 @@ body::-webkit-scrollbar{
 
 #imgh{
   height: 20rem;
+  transition: .5s ease-in-out 0s;
 }
 
 
@@ -317,6 +324,7 @@ body::-webkit-scrollbar{
 .imgHovers{ 
   overflow: hidden;
   border-radius: 20px;
+  cursor: pointer;
 }
 @media (max-width: 767px){
   .edit-btn{
@@ -356,13 +364,36 @@ body::-webkit-scrollbar{
 
 /* map  */
 #map{
-  height: 600px;
+  height: 400px;
   width: 100%;
   border-radius: 1rem;
   border: 1px solid rgba(0, 128, 0, 0.428);
 }
 
-.show-img{
-  height:400px;
-  width: 100%;
+/* img when there is more  */
+/* .fix-img{
+  width: inherit;
+  height: initial;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+} */
+
+.search-btn {
+  background-color: #fe424d;
+  color: #fff;
+  border-radius: 25px;
+  padding: 0 1rem;
+}
+.search-btn:hover {
+  background-color: #fe424d;
+  color: #fff;
+}
+.search-btn i {
+  display: inline;
+  margin-right: 0.5rem;
+}
+.search-inp {
+  border-radius: 25px;
+  padding: 0.5rem 3rem;
 }
