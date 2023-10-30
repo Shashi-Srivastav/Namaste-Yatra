@@ -13,14 +13,14 @@ const upload = multer({storage});
 // Using router.route to reduce lines of code
 router.route("/")
     .get(wrapAsync(listingController.index))
-    .post(isLoggedIn, upload.single("listing[image]"), fileSizeLimit, validateListing, wrapAsync(listingController.createListings)); // Add fileSizeLimit middleware
+    .post(isLoggedIn, upload.single("listing[image]"),validateListing, wrapAsync(listingController.createListings)); // Add fileSizeLimit middleware
 
 // New Route
 router.get("/new", isLoggedIn, listingController.renderNewForm);
 
 router.route("/:id")
     .get(wrapAsync(listingController.showListing))
-    .put(isLoggedIn, isOwner, upload.single("listing[image]"), fileSizeLimit, validateListing, wrapAsync(listingController.updateListing)) // Add fileSizeLimit middleware
+    .put(isLoggedIn, isOwner, upload.single("listing[image]"),validateListing, wrapAsync(listingController.updateListing)) // Add fileSizeLimit middleware
     .delete( isLoggedIn, isOwner, wrapAsync(listingController.destroyListing));
 // Edit Route
 router.get("/:id/edit", isLoggedIn, isOwner, wrapAsync(listingController.renderEditForm));
