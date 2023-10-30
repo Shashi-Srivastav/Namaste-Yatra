@@ -92,7 +92,7 @@
     <% for(let listing of allListings) { %>
       <a href="/listings/<%= listing._id %>" class="listing-link">
         <div class="card col listing-card">
-          <div class="imgHovers">
+          <div class="imgHovers mb-2" style="box-shadow: 5px 5px 5px rgba(0,0,0, 0.45);">
             <img src="<%= listing.image.url %>" class="card-img-top imgHover" id="imgh" alt="listing_image" >
           </div>
 
