@@ -1,0 +1,224 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+  .rounded-rect {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 50px -25px black;
+  }
+   
+  .flex-center {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+   
+  .flex-center.left {
+  left: 0px;
+  }
+   
+  .flex-center.right {
+  right: 0px;
+  }
+   
+  /* .sidebar-content {
+  position: absolute;
+  width: 95%;
+  height: 15%;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  color: #683193;
+  } */
+  .geocoder-dropdown-item {
+padding: 5px;
+}
+.geocoder-dropdown-icon {
+margin-right: 10px;
+}
+.geocoder-dropdown-text {
+color: #5a3fc0;
+font-family: Arial, Helvetica, sans-serif;
+font-size: larger;
+}
+.mapboxgl-ctrl-geocoder--input {
+    font: inherit;
+    width: 100%;
+    border: 0;
+    background-color: transparent;
+    margin: 0;
+    height: 50px;
+    color: #404040;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 6px 45px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.mapboxgl-ctrl-geocoder {
+   position: relative;
+   bottom: 120px;
+   right: 580px;
+
+}
+  /* .sidebar-toggle {
+  position: absolute;
+  width: 1.3em;
+  height: 1.3em;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+    */
+  /* .sidebar-toggle.left {
+  right: -1.5em;
+  }
+   
+  .sidebar-toggle.right {
+  left: -1.5em;
+  }
+   
+  .sidebar-toggle:hover {
+  color: #683193;
+  cursor: pointer;
+  }
+   
+  .sidebar {
+  transition: transform 1s;
+  z-index: 1;
+  width: 300px;
+  height: 100%;
+  } */
+   
+  /*
+  The sidebar styling has them "expanded" by default, we use CSS transforms to push them offscreen
+  The toggleSidebar() function removes this class from the element in order to expand it.
+  */
+  .left.collapsed {
+  transform: translateX(-295px);
+  }
+   
+  .right.collapsed {
+  transform: translateX(295px);
+  }
+  @media (max-width: 767px){
+    .sidebar-toggle{
+  display: none;
+}
+  }
+  </style>
+<script>
+  const mapToken = "<%= process.env.MAP_TOKEN %>";
+  const listing = JSON.parse('<%- JSON.stringify(listing) %>');
+</script>
+  <body>
+    <div class="row mt-3 show-main">
+      <div class="col-8 offset-2">
+        <h3>
+          <%= listing.title %>
+        </h3>
+      </div>
+      <div class="card col-8 mt-2 offset-2 show-card listing-card"> 
+        <div class="fix-img">
+          <img style="box-shadow: 10px 10px 10px rgba(0,0,0, 0.45);" src="<%= listing.image.url %>" class="card-img-top show-img" alt="listing_img"> 
+        </div>
+        <div class="card-body mt-3"> 
+        <p class="card-text"> Owned by ~  <i><%= listing.owner.username  %></i></p> 
+        <p class="card-text"><%= listing.description  %> <br></p> 
+        <p class="card-text">&#x20B9; <%= listing.price.toLocaleString("en-In")  %> <br></p> 
+        <p  class="card-text"><i class="fa-solid fa-location-dot" >&nbsp;</i><%= listing.location  %>,<%= listing.country %> <br></p> 
+        </div> 
+      </div>
+      <br />
+<% if(currUser && listing.owner._id.equals(currUser._id)) { %>
+      <div class="btns">
+        <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-3 edit-btn">Edit</a>
+        <form method="POST" action="/listings/<%=listing._id%>?_method=DELETE">
+          <button class="btn btn-dark offset-5">Delete</button>
+        </form>
+      </div>
+      
+<% } %>
+<hr class="mt-3 mb-3">
+<div class="col-8 offset-2 mb-3" id="mapBox">
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+  <h3>Where you'll be</h3>
+  <div style=" position: relative; box-shadow: 10px 10px 10px rgba(0,0,0, 0.45);" id="map">
+    <!-- Right Sidebar -->
+    <div id="right" class="sidebar flex-center right collapsed">
+      <div class="sidebar-content rounded-rect flex-center">
+        <%= listing.location  %>
+        <div class="sidebar-toggle rounded-rect right" onclick="toggleSidebar('right')">
+          &larr;
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="col-8 offset-2 mb-3">
+        
+<% if(currUser) { %>
+  <hr />
+        <h4><i class="fa-regular fa-pen-to-square"></i> &nbsp;Leave a Review</h4>
+        <form action="/listings/<%= listing.id %>/reviews" method="post" novalidate class="needs-validation">
+
+        <div class="mb-3 mt-3">
+          <label for="rating" class="form-label">Rating</label>
+          <fieldset class="starability-slot">
+            <legend>First rating:</legend>
+            <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
+            <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+            <label for="first-rate1" title="Terrible">1 star</label>
+            <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+            <label for="first-rate2" title="Not good">2 stars</label>
+            <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+            <label for="first-rate3" title="Average">3 stars</label>
+            <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+            <label for="first-rate4" title="Very good">4 stars</label>
+            <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+            <label for="first-rate5" title="Amazing">5 stars</label>
+          </fieldset>
+        </div>
+
+          <div class="mb-3 mt-3">
+            <label for="comment" class="form-label">Comments</label>
+            <textarea name="review[comment]" id="comment" cols="30" rows="5" class="form-control" required></textarea>
+            <div class="invalid-feedback">Please add some comments for review</div>
+          </div>
+          <button class="btn btn-outline-dark">Submit</button>
+        </form>
+        <hr/>
+<% } %>
+        <% if(listing.reviews.length > 0) { %>
+        <div class="row">
+          <p><b>All Reviews</b></p>
+          <% for(review of listing.reviews){%>
+            <div class="card  col-8 offset-2 ms-3 mb-3">
+              <div class="card-body">
+                <h5 class="card-title">@<%= review.author.username %></h5>
+                <p class="starability-result mb-2 card-text" data-rating="<%= review.rating %>"></p>
+                <p class="card-text">
+                  <%= review.comment %>
+                </p>
+                
+              </div>
+              <% if(currUser) {%>
+              <form class="mb-3" method="POST"
+                action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+                <button class="btn btn-sm mt-2 btn-dark">Delete</button>
+              </form>
+              <% } %>
+            </div>
+
+            <%}%>
+        </div>
+        <% } %>
+      </div>
+      
+    </div>
+    <script src="/js/map.js"></script>
+  </body>

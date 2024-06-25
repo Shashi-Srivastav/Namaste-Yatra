@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste Yatra</title>
+    <link rel="shortcut icon" href="https://res.cloudinary.com/danoxgcb8/image/upload/v1698837544/wanderlust_DEV/namaste_1_scnrpm.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link href="/css/rating.css" rel="stylesheet"/>
+
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+<style>
+  /* Styling for the back-to-top button */
+  #back-to-top {
+    position: fixed;
+    bottom: 26px;
+    right: 30px;
+    display: none;
+    font-size: 30px;
+    background-color: #683193;
+    color: #fff;
+    border: none;
+    border-radius: 27%;
+    width: 40px;
+    height: 40px;
+    z-index: 20;
+    padding-bottom: 10px;
+    padding-left: 11px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 16px;
+}
+@media (max-width: 767px){
+  #back-to-top{
+    bottom: 34px;
+  }
+}
+</style>
+</head>
+<body>
+    <%- include("../includes/navbar.ejs")%>
+    <div class="container">
+    <%- include("../includes/flash.ejs")%>    
+    <%- body %></div>
+    <%- include("../includes/footer.ejs")%>
+      <button id="back-to-top" class="btn btn-primary" style="display: none;">↑</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="/js/script.js"></script>
+    <script>// Get the button element
+// Add this code inside your existing <script> tag
+  const backToTopButton = document.getElementById("back-to-top");
+
+// Show the button when the user scrolls down a bit
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTopButton.style.display = "block";
+  } else {
+    backToTopButton.style.display = "none";
+  }
+});
+
+// Scroll to the top when the button is clicked
+backToTopButton.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Add smooth scrolling effect
+  });
+});
+
+// Disable right-click
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+function ctrlShiftKey(e, keyCode) {
+  return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
+}
+
+document.onkeydown = (e) => {
+  // Disable F12, Ctrl + Shift + I, Ctrl + Shift + J, Ctrl + U
+  if (
+    event.keyCode === 123 ||
+    ctrlShiftKey(e, 'I') ||
+    ctrlShiftKey(e, 'J') ||
+    ctrlShiftKey(e, 'C') ||
+    (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))
+  )
+    return false;
+};
+
+        </script>
+    </body>
+    </html>

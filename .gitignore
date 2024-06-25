@@ -1,0 +1,16 @@
+.env
+<<<<<<< HEAD
+node_modules
+=======
+<<<<<<< HEAD
+node_modules
+=======
+node_modules
+
+>>>>>>> a0cad4a (edit,show,update,new - routes, styling, script,middleware,err handling client side and server side)
+
+
+
+# Backup Package.json
+>>>>>>> c305763 (index, show,create, edit ,update route)
+.vercel
