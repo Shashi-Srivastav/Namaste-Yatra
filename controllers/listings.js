@@ -93,3 +93,10 @@ module.exports.filter = async(req,res,next)=>{
         res.redirect("/listings")
     }
 }
+
+module.exports.search = async (req, res) => {
+    let { title } = req.query;
+  
+    const allListings = await Listing.find({ title });
+    res.render("./listings/index.ejs", { allListings });
+};
