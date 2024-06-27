@@ -11,6 +11,7 @@ const {storage} = require("../cloudConfig.js");
 const upload = multer({storage});
 
 router.get("/filter/:id",wrapAsync(listingController.filter));
+router.get("/search", wrapAsync(listingController.search));
 
 // Using router.route to reduce lines of code
 router.route("/")
