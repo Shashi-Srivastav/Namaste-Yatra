@@ -1,4 +1,10 @@
-
+<p align="center">
+  <b style="color: blue;  ">Visitor count</b>
+  <br>
+  <a style="" href="https://github.com/shashi-srivastav">
+  <img src="https://profile-counter.glitch.me/namaste-yatra/count.svg" />
+  </a>
+</p>
 # Namaste Yatra 
 ![Logo](https://res.cloudinary.com/danoxgcb8/image/upload/v1698837544/wanderlust_DEV/namaste_1_scnrpm.png)
 
