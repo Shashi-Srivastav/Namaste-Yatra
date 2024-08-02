@@ -16,6 +16,83 @@ Developed a full-stack Airbnb clone with CRUD operations, user authentication, a
 
 - [@shashi-srivastava](https://github.com/Shashi-Srivastav)
 
+# Namaste Yatra File Structure
+
+```plaintext
+Namaste-Yatra/
+├── .git/                         # Git configuration and metadata
+│   ├── ...
+├── .github/                      # GitHub-specific files
+│   ├── workflows/                # GitHub Actions workflows
+│   │   ├── ...
+│   └── ...
+├── public/                       # Public static files
+│   ├── assets/                   # Static assets (images, fonts, etc.)
+│   │   ├── logo.png
+│   │   └── ...
+│   ├── index.html                # Main HTML file
+│   ├── favicon.ico               # Favicon
+│   └── manifest.json             # Web app manifest
+├── src/                          # Main source code
+│   ├── api/                      # API calls and configurations
+│   │   ├── api.js
+│   │   └── ...
+│   ├── assets/                  # Images, fonts, etc.
+│   │   ├── logo.svg
+│   │   └── ...
+│   ├── components/             # Reusable components
+│   │   ├── Header/
+│   │   │   ├── Header.js
+│   │   │   ├── Header.css
+│   │   │   └── ...
+│   │   ├── Footer/
+│   │   │   ├── Footer.js
+│   │   │   ├── Footer.css
+│   │   │   └── ...
+│   │   └── ...
+│   ├── contexts/               # React Contexts
+│   │   ├── AuthContext.js
+│   │   └── ...
+│   ├── hooks/                  # Custom hooks
+│   │   ├── useAuth.js
+│   │   └── ...
+│   ├── models/                 # Data models or schemas
+│   │   ├── User.js
+│   │   ├── Listing.js
+│   │   └── ...
+│   ├── pages/                  # Page components
+│   │   ├── Home/
+│   │   │   ├── Home.js
+│   │   │   ├── Home.css
+│   │   │   └── ...
+│   │   ├── Listings/
+│   │   │   ├── Listings.js
+│   │   │   ├── Listings.css
+│   │   │   └── ...
+│   │   └── ...
+│   ├── routes/                 # Route definitions
+│   │   ├── AppRouter.js
+│   │   └── ...
+│   ├── services/               # Business logic and service functions
+│   │   ├── authService.js
+│   │   └── ...
+│   ├── styles/                 # Global styles and themes
+│   │   ├── main.css
+│   │   └── ...
+│   ├── utils/                  # Utility functions and helpers
+│   │   ├── formatDate.js
+│   │   └── ...
+│   ├── App.js                  # Main app component
+│   ├── index.js                # Entry point of the application
+│   └── setupTests.js           # Testing setup file
+├── .env                         # Environment variables
+├── .gitignore                   # Git ignore file
+├── README.md                    # Project documentation
+├── package.json                 # NPM package configuration
+├── package-lock.json            # NPM lock file
+├── webpack.config.js            # Webpack configuration (if applicable)
+└── babel.config.js              # Babel configuration (if applicable)
+```
 
 ## Technologies Used
 
