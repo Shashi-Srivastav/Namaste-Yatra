@@ -1,22 +1,31 @@
-
-# Namaste Yatra 
-![Logo](https://res.cloudinary.com/danoxgcb8/image/upload/v1698837544/wanderlust_DEV/namaste_1_scnrpm.png)
-
-Developed a full-stack Airbnb clone with CRUD operations, user authentication, and data validation, integrating Mapbox for location services and Cloudinary for image management
-
 <p align="center">
-  <b style="color: blue;  ">Visitor count</b>
-  <br>
-  <a style="" href="https://github.com/shashi-srivastav">
-  <img src="https://profile-counter.glitch.me/namaste-yatra/count.svg" />
-  </a>
+  <img src="https://cdn-icons-png.flaticon.com/512/6295/6295417.png" width="100" />
 </p>
+<p align="center">
+    <h1 align="center">NAMASTE-YATRA</h1>
+</p>
+<p align="center">
+    <em>Make your travell easy with Namaste Yatra</em>
+</p>
+<p align="center">
+	<img src="https://img.shields.io/github/license/Shashi-Srivastav/Namaste-Yatra?style=flat&color=0080ff" alt="license">
+	<img src="https://img.shields.io/github/last-commit/Shashi-Srivastav/Namaste-Yatra?style=flat&logo=git&logoColor=white&color=0080ff" alt="last-commit">
+	<img src="https://img.shields.io/github/languages/top/Shashi-Srivastav/Namaste-Yatra?style=flat&color=0080ff" alt="repo-top-language">
+	<img src="https://img.shields.io/github/languages/count/Shashi-Srivastav/Namaste-Yatra?style=flat&color=0080ff" alt="repo-language-count">
+<p>
+<p align="center">
+		<em>Developed with the software and tools below.</em>
+</p>
+<p align="center">
+	<img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=flat&logo=JavaScript&logoColor=black" alt="JavaScript">
+	<img src="https://img.shields.io/badge/Passport-34E27A.svg?style=flat&logo=Passport&logoColor=white" alt="Passport">
+	<img src="https://img.shields.io/badge/Express-000000.svg?style=flat&logo=Express&logoColor=white" alt="Express">
+	<img src="https://img.shields.io/badge/JSON-000000.svg?style=flat&logo=JSON&logoColor=white" alt="JSON">
+</p>
+<hr>
 
-## Authors
+<div>
 
-- [@shashi-srivastava](https://github.com/Shashi-Srivastav)
-
-# Namaste Yatra File Structure
 
 # Namaste Yatra File Structure
 
